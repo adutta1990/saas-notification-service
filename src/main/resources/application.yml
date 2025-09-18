@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: password
+  
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  
+  h2:
+    console:
+      enabled: true
+
+notification:
+  rate-limit:
+    default-capacity: 100
+    default-refill-rate: 10
+  queue:
+    max-size: 10000
+  
+logging:
+  level:
+    com.example.notification: DEBUG
